@@ -20,6 +20,7 @@ var color = d3.scale.quantize()
     .range(['rgb(255,255,217)','rgb(237,248,177)','rgb(199,233,180)','rgb(127,205,187)','rgb(65,182,196)','rgb(29,145,192)','rgb(34,94,168)','rgb(37,52,148)'])
     .domain([0.0, 55.00]); // starting at 0, because there are some regions I have no data on..
 
+legend = d3.select('#legend').append('ul');
 	    		
 d3.json("northAmerica.json", function(json){
 d3.csv("PercentageOfIndividualsUsingTheInternet.csv",function(csv){
@@ -91,7 +92,6 @@ d3.csv("PercentageOfIndividualsUsingTheInternet.csv",function(csv){
 		draw(2012);
 		
 		$(".btn").click(function(e){
-			alert("foo");
 			 $("#yearSelect").find(".highlight").removeClass("highlight");
 			e.preventDefault();
 			map.remove();
